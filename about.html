@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About & Recipes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>Looking for videos?!</h1>
+      <nav>
+        <a href="index.html">Home</a> |
+         <a href="about.html">Search Videos</a> |
+        
+      </nav>
+    </div>
+    
+  </header>
+
+   <!-- ===== Main ===== -->
+  <main>
+    <section>
+      <h2 style="color: brown;">Search What You Wanna Savour!!!</h2>
+      <p>
+      
+      </p>
+    </section>
+
+
+    <!-- ===== YouTube Search Section ===== -->
+    <section class="yt-search-section">
+      <h2>🎥  Cooking Videos (YouTube Search)</h2>
+     <!-- inside your yt‑search-section -->
+    <input id="ytSearchInput" placeholder="Search YouTube..." />
+<button id="ytSearchBtn">Search</button>
+<div id="ytResults"></div>
+<div id="videoResults"></div>
+
+<script src="youtube-search.js"></script>
+<script>
+  document.getElementById("ytSearchBtn").onclick = function () {
+    const term = document.getElementById("ytSearchInput").value;
+    search(term);
+  };
+</script>
+
+<div id="suggestions" class="suggestions-box"></div>
+
+<!-- results grid -->
+<div id="ytResults" class="video-grid"></div>
+
+<!-- load scripts -->
+<script src="script.js"></script>          <!-- your timers etc. -->
+
+
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Bimika's Cooking Website</p>
+  </footer>
+
+
+
+
+</body>
+</html>

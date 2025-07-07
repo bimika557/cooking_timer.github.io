@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cooking Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ── NAVBAR ───────────────────────────────────────────── -->
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <h1>Welcome to My Cooking Website</h1>
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html"> Search Videos</a> |
+        
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── MAIN ─────────────────────────────────────────────── -->
+  <main>
+
+    <!-- Search bar -->
+    <section class="search-section">
+      <h2>🔍 Search Recipes</h2>
+      <input id="recipeSearch" type="text"
+             placeholder="e.g., biryani, pasta…"
+             oninput="showSuggestions()" autocomplete="off">
+      <button onclick="searchRecipes()">Search</button>
+
+      <!-- suggestions dropdown -->
+      <div id="suggestions" class="suggestions-box"></div>
+    </section>
+
+    <!-- Results injected by JS -->
+    <section id="resultsSection" class="results-section"></section>
+       <h2>Set Your Cooking Timers</h2>
+    <div id="timersContainer"></div>
+
+    <div class="add-timer-section">
+      <p>Do you want a new timer?</p>
+      <button onclick="addTimer()">Add Timer</button>
+      
+      <p id="limitMsg" class="hidden">Maximum of 15 timers reached.</p>
+    </div>
+    <!-- === Flip‑card quick timers ==================================== -->
+    <section class="flipcard-wrapper">
+      <h2 class="flipcard-title">⏱ Quick‑Timer Recipes</h2>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><h3>Boiled Eggs</h3></div>
+          <div class="flip-card-back">
+            <p>Perfect soft‑boiled eggs.</p>
+            <p><strong>Timer:</strong> 5&nbsp;min&nbsp;(300&nbsp;s)</p>
+            <button onclick="startFixedTimer('boiledEggs',300)">Start</button>
+            <div id="boiledEggsDisplay">300</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><h3>Grilled Cheese</h3></div>
+          <div class="flip-card-back">
+            <p>Golden & gooey!</p>
+            <p><strong>Timer:</strong> 3&nbsp;min&nbsp;(180&nbsp;s)</p>
+            <button onclick="startFixedTimer('grilledCheese',180)">Start</button>
+            <div id="grilledCheeseDisplay">180</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><h3>Fluffy Rice</h3></div>
+          <div class="flip-card-back">
+            <p>Light, separate grains.</p>
+            <p><strong>Timer:</strong> 10&nbsp;min&nbsp;(600&nbsp;s)</p>
+            <button onclick="startFixedTimer('rice',600)">Start</button>
+            <div id="riceDisplay">600</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =============================================================== -->
+  
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <footer>
+    <p>&copy; 2025 My Cooking Website</p>
+  </footer>
+
+  <!-- ── HIDDEN MODAL for recipe details ────────────────────────────── -->
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" class="modal-close">&times;</span>
+      <div id="modalBody"><!-- recipe details injected here --></div>
+    </div>
+  </div>
+
+  <!-- JS bundle -->
+  <script src="script.js"></script>
+</body>
+</html>
